@@ -5,17 +5,19 @@ body{
 
 #menu_div{
     background-color:lightgray;
-    width: 350px;
-    height:100vh;
+    width: 400px;
+    height:99.9vh;
     overflow: auto;
     margin:0;  
 }
 
 #dungeon_div{
     width: 350px;
-    height: 100vh;
+    height: 99.4vh;
     display: inline-block;
     background-color: whitesmoke;
+    margin-top:0;
+    margin-bottom:0;
     margin-left: 30px;
 }
 
@@ -31,16 +33,18 @@ body{
     height: 350px;
     background-color: darkorange;
     margin-top: 70px;
+    margin-bottom:0;
 }
 
 #character_div{
     width: 400px;
-    height: 100vh;
+    height: 99.9vh;
     background-color:mintcream;
     margin-right: 30px;
     display: inline-block;
     position:relative;
-    
+    margin-top:0;
+    margin-bottom:0;
 }
 
 #profile_bar_div{
@@ -150,3 +154,30 @@ body{
     display:inline-block;
     margin: 10px 50px;
 }
+
+#information_div{
+    width: 90%;
+    height: 95%;
+    background-color: black;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+#nickname_div{
+    width: 90%;
+    height: 100px;
+    background-color: darkred;
+    display:inline-block;
+    margin-top: 300px;
+    margin-left: 15px;
+}
+
+#money_div{
+    width: 90%;
+    height: 100px;
+    background-color: darkred;
+    display:inline-block;
+    margin-top: 20px;
+    margin-left: 15px;
+}
+
