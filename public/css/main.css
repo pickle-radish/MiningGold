@@ -155,29 +155,3 @@ body{
     margin: 10px 50px;
 }
 
-#information_div{
-    width: 90%;
-    height: 95%;
-    background-color: black;
-    margin-top: 20px;
-    margin-left: 20px;
-}
-
-#nickname_div{
-    width: 90%;
-    height: 100px;
-    background-color: darkred;
-    display:inline-block;
-    margin-top: 300px;
-    margin-left: 15px;
-}
-
-#money_div{
-    width: 90%;
-    height: 100px;
-    background-color: darkred;
-    display:inline-block;
-    margin-top: 20px;
-    margin-left: 15px;
-}
-
