@@ -2,13 +2,44 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="../public/css/css.css">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="js/client.js"></script>
+    <link rel="stylesheet" href="css/main.css">
 </head>
 
 
 <body>
-    hi
-    <div id="test">hi</div>
+    <div id="dungeon_div">
+        <div id="monster_div"></div>
+        <div id="mining_div"></div>
+    </div>
+ 
+    <div id="menu_div" class="pull-right"></div>
+    <div id="character_div" class="pull-right">
+        <div id="profile_bar_div"></div>
+        <div id="inventory_view_div">
+            <div id="inventory_header">
+                <div id="inventory_hat_div"></div>
+            </div>
+            <div id="inventory_body">
+                <div id="body_left">
+                    <div id="inventory_weapon_div"></div>
+                    <div id="inventory_glove_div"></div>
+                </div>
+                <div id="body_middle"></div>
+                <div id="body_right">
+                    <div id="inventory_top_div"></div>
+                    <div id="inventory_bottom_div"></div>
+                </div>
+            </div>
+            <div id="inventory_footer">
+                <div id="inventory_boots_div"></div>
+                <div id="inventory_pet_div" class="pull-right"></div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
