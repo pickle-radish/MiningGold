@@ -20,9 +20,9 @@
  
     <div id="menu_div" class="pull-right">
         <div id="menu_tab">
-            <div class="tab_write" id="main_tab">메인</div>
-            <div class="tab_write" id="market_tab">상점</div>
-            <div class="tab_write" id="inventory_tab">아이템</div>
+            <div class="tab_write" id="main_tab">Main</div>
+            <div class="tab_write" id="market_tab">Store</div>
+            <div class="tab_write" id="inventory_tab">Item</div>
         </div>
 
         <div id="information_div">
@@ -30,7 +30,26 @@
             <div id="money_div"><h3>Money 1,000,000</h3></div>
         </div>
         <div id="market_div">
-            market content
+            <div class="tab">
+                <button class="tablinks" onclick="openCity(event, 'London')">London</button>
+                <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
+                <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+            </div>
+              
+            <div id="London" class="tabcontent">
+                <h3>London</h3>
+                <p>London is the capital city of England.</p>
+            </div>
+            
+            <div id="Paris" class="tabcontent">
+                <h3>Paris</h3>
+                <p>Paris is the capital of France.</p> 
+            </div>
+            
+            <div id="Tokyo" class="tabcontent">
+                <h3>Tokyo</h3>
+                <p>Tokyo is the capital of Japan.</p>
+            </div>
         </div>
         <div id="inventory_div">
             inventory content
