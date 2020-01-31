@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/pickle-radish/MiningGold/issues"
   },
-  "homepage": "https://github.com/pickle-radish/MiningGold#readme"
+  "homepage": "https://github.com/pickle-radish/MiningGold#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
