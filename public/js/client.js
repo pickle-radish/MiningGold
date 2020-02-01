@@ -1,10 +1,18 @@
 $(document).ready(function(){
+    $(document).on('click', '#logout_btn', function(){
+        alert();
+        // $.post('/logout', {}, function(returnData){
+        //     alert(returnData.message);
+        // });
+    });
+
     $(document).on('click', '#login_btn', function(){
         const id=$("#userID").val();
         const pw=$("#userPW").val(); 
         const send_param={id, pw};
         $.post('/login', send_param, function(returnData){
             alert(returnData.message);
+            location.reload();
         });
     });
 

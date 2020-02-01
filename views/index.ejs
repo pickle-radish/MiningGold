@@ -32,6 +32,19 @@
         <source src="img/background/dungeonVideo.mp4" type="video/mp4">
     </video>
 
+    <div id="mining_gold">
+        <div id="logo_div"><h3>Mining Gold</h3></div>
+        <%
+        if(name){
+        %>
+        <div id="logout_div"><%= name%>님 환영합니다</div>
+        <button class="btn btn-danger" id="logout_btn">로그아웃</button>
+        <%
+        }
+        %>
+
+    </div>
+
     <div id="dungeon_div">
         <div id="monster_div"></div>
         <div id="mining_div"></div>

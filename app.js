@@ -1,3 +1,4 @@
+const logoutRouter=require('./routes/logout');
 const loginRouter=require('./routes/login');
 const registerRouter=require('./routes/register');
 const indexRouter=require('./routes/index');
@@ -21,6 +22,7 @@ app.use(session({
     }
 }));
 
+app.use('/logout', logoutRouter);
 app.use('/login', loginRouter);
 app.use('/register', registerRouter);
 app.use('/',indexRouter);

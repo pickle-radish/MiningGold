@@ -6,6 +6,32 @@ body{
     
 }
 
+#mining_gold{
+    position:absolute;
+    margin-left:30px;
+    z-index:1;
+}
+
+#logo_div{
+    color:white;
+    float: left;
+    margin-top: 20px;
+
+}
+
+#logo_div h3{
+    margin:0;
+
+}
+
+#logout_div{
+    margin-left: 10px;
+    margin-top: 22px;
+    display:inline-block;
+}
+
+
+
 #menu_div{
     background-color:lightgray;
     width: 400px;
@@ -17,7 +43,7 @@ body{
     width: 250px;
     height: 99.4vh;
     display: inline-block;
-    background-color: whitesmoke;
+    background-color: rgb(88, 255, 219);
     margin-top:0;
     margin-bottom:0;
     margin-left: 70px;

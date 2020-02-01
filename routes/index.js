@@ -13,7 +13,6 @@ router.get('/', (req,res)=>{
         stage=req.session.stage;
         exp=req.session.exp;
     }
-    
     res.render('index',{name, lv, exp, stage});
 });
 
