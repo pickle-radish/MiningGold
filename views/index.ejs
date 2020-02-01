@@ -35,7 +35,8 @@
     <div id="mining_gold">
         <div id="logo_div"><h3>Mining Gold</h3></div>
         <%
-        if(name){
+        if(user_result){
+            let name=user_result.name
         %>
         <div id="logout_div"><%= name%>님 환영합니다</div>
         <button class="btn btn-danger" id="logout_btn">로그아웃</button>
@@ -52,8 +53,8 @@
  
     <div id="menu_div" class="pull-right" >
         <%
-            let flag=0;
-            if(flag==0){
+            
+            if(!user_result){
         %>
         <div id="login_div">
             <label>ID</label>
@@ -64,7 +65,7 @@
             <button id="register_modal_btn" class="btn pull-right" data-target="#registermodal" data-toggle="modal">회원가입</button>
         </div>
         <%
-            }   else{
+            }else{
         %>
         <div class="tab">
             <button class="tablinks" id="main_tab">메인</button>
@@ -82,15 +83,15 @@
                 <div class="tab_write" id="weapon_tab">무기</div>
                 <div class="tab_write" id="hat_tab">모자</div>
                 <div class="tab_write" id="glove_tab">장갑</div>
-                <!-- <div class="tab_write" id="glove_tab">상의</div>
+                <div class="tab_write" id="glove_tab">상의</div>
                 <div class="tab_write" id="glove_tab">하의</div>
                 <div class="tab_write" id="glove_tab">신발</div>
-                <div class="tab_write" id="glove_tab">펫</div> -->
+                <div class="tab_write" id="glove_tab">펫</div>
                 
             </div>
             <div class="item_list pull-right" id="weapon_list">
                 <%
-                    for(let i=0;i<5;i++){
+                    for(let i=0;i<weapon;i++){
                 %>
                 <div class="list1_div">
                     <div id="item_img"></div>

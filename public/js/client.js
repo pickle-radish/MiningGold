@@ -1,9 +1,9 @@
 $(document).ready(function(){
     $(document).on('click', '#logout_btn', function(){
-        alert();
-        // $.post('/logout', {}, function(returnData){
-        //     alert(returnData.message);
-        // });
+        $.post('/logout', {}, function(returnData){
+            alert(returnData.message);
+            location.reload();
+        });
     });
 
     $(document).on('click', '#login_btn', function(){
