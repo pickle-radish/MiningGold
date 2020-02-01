@@ -10,22 +10,34 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="css/market.css">
+    <style>
+        .coverid_video{
+            position:absolute;
+            top:0;
+            left:0;
+            /* min-width: 100%; */
+            max-height: 100vh;
+            width:100%;
+            /* height:auto; */
+            z-index:-1;
+            object-fit:cover;
+        }
+    </style>
     
 </head>
 
 
 <body>
-    <div class="coverid-wrapper">
+    <video class="coverid_video" autoplay loop>
+        <source src="img/background/dungeonVideo.mp4" type="video/mp4">
+    </video>
 
-        
-    </div>
-
-    <div id="dungeon_div">
+    <div id="dungeon_div"  style="display:none;">
         <div id="monster_div"></div>
         <div id="mining_div"></div>
     </div>
  
-    <div id="menu_div" class="pull-right">
+    <div id="menu_div" class="pull-right" style="display:none;">
         <div class="tab">
             <button class="tablinks" id="main_tab">메인</button>
             <button class="tablinks" id="market_tab">상점</button>
@@ -96,7 +108,7 @@
         
     </div>
         
-    <div id="character_div" class="pull-right">
+    <div id="character_div" class="pull-right"  style="display:none;">
         <div id="profile_bar_div"></div>
         <div id="inventory_view_div">
             <div id="inventory_header">
