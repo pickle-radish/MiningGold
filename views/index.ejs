@@ -9,6 +9,8 @@
     <script src="js/client.js"></script>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/market.css">
+    
 </head>
 
 
@@ -19,40 +21,72 @@
     </div>
  
     <div id="menu_div" class="pull-right">
-        <div id="menu_tab">
-            <div class="tab_write" id="main_tab">Main</div>
-            <div class="tab_write" id="market_tab">Store</div>
-            <div class="tab_write" id="inventory_tab">Item</div>
+        <div class="tab">
+            <button class="tablinks" id="main_tab">메인</button>
+            <button class="tablinks" id="market_tab">상점</button>
+            <button class="tablinks" id="inventory_tab">아이템</button>
         </div>
+        
 
         <div id="information_div">
             <div id="nickname_div"><h3>Nick Name - Pickle_SM<br></h3>Lv.10</div>
             <div id="money_div"><h3>Money 1,000,000</h3></div>
         </div>
-        <div id="market_div">
-            <div class="tab">
-                <button class="tablinks" onclick="openCity(event, 'London')">London</button>
-                <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
-                <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+        <div id="market_div" class="shopping_div">
+            <div id="menu_tab">
+                <div class="tab_write" id="weapon_tab">무기</div>
+                <div class="tab_write" id="hat_tab">모자</div>
+                <div class="tab_write" id="glove_tab">장갑</div>
+                `
+                
             </div>
-              
-            <div id="London" class="tabcontent">
-                <h3>London</h3>
-                <p>London is the capital city of England.</p>
-            </div>
-            
-            <div id="Paris" class="tabcontent">
-                <h3>Paris</h3>
-                <p>Paris is the capital of France.</p> 
-            </div>
-            
-            <div id="Tokyo" class="tabcontent">
-                <h3>Tokyo</h3>
-                <p>Tokyo is the capital of Japan.</p>
+            <div class="item_list pull-right" id="weapon_list">
+                <%
+                    for(let i=0;i<5;i++){
+                %>
+                <div class="list1_div">
+                    <div id="item_img"></div>
+                    <div id="item_info">
+                        <ul id="item_ul">
+                        <li>123</li>  
+                        <li>123</li>  
+                        <li>123</li>  
+                        </ul>   
+                    </div> 
+                </div>
+                <%       
+                  }
+                %>
             </div>
         </div>
-        <div id="inventory_div">
-            inventory content
+        <div id="inventory_div" class="shopping_div">
+            <div id="menu_tab">
+                <div class="tab_write" id="weapon_tab">무기</div>
+                <div class="tab_write" id="hat_tab">모자</div>
+                <div class="tab_write" id="glove_tab">장갑</div>
+                <div class="tab_write" id="glove_tab">상의</div>
+                <div class="tab_write" id="glove_tab">하의</div>
+                <div class="tab_write" id="glove_tab">신발</div>
+                <div class="tab_write" id="glove_tab">펫</div>
+            </div>
+            <div class="item_list pull-right" id="weapon_list">
+                <%
+                    for(let i=0;i<5;i++){
+                %>
+                <div class="list1_div">
+                    <div id="item_img"></div>
+                    <div id="item_info">
+                        <ul id="item_ul">
+                        <li>123</li>  
+                        <li>123</li>  
+                        <li>123</li>  
+                        </ul>   
+                    </div> 
+                </div>
+                <%       
+                  }
+                %>
+            </div>
         </div>
         
     </div>

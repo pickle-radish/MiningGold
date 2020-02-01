@@ -1,13 +1,13 @@
 body{
    background-color:dimgray;
-
+   font-family: Arial;
+    
 }
 
 #menu_div{
     background-color:lightgray;
     width: 400px;
     height:99.9vh;
-    overflow: auto;
     margin:0;  
 }
 

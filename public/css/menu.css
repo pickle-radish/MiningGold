@@ -1,29 +1,66 @@
 #menu_tab{
-    width:50px;
+    width:30px;
     height:100%;
     background-color: aqua;
     float:left;
 }
+
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+  }
+  
+  /* Style the buttons inside the tab */
+  .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+  }
+  
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color: #ddd;
+  }
+  
+  /* Create an active/current tablink class */
+  .tab button.active {
+    background-color: #ccc;
+  }
+  
+  /* Style the tab content */
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+  }
+
+
 .tab_write{
     width: 90%;    
     writing-mode: tb-rl; 
     background-color: Darkslateblue;
     color:white;
-    padding:10px;
-    margin:10px 0;
+    padding:10px 0;
+    margin:3px 0;
     float:right;
     cursor:pointer;
-    font-size: 25px;
+    border-radius:15px 0 0 15px;
+    font-size: 20px;
 }
 
 
 #information_div{
-    width: 350px;
-    height: 95%;
+    width: 100%;
+    height: 94%;
     background-color: black;
-    margin-top: 20px;
-    /* margin-left: 20px; */
-    float: left;
 }
 
 #nickname_div{
@@ -44,16 +81,54 @@
     margin-left: 15px;
 }
 
-#market_div{
-    background-color: rgb(39, 182, 51);
-    width:100%;
-    height: 300px;
-    display:none;
-}
-
-#inventory_div{
+.shopping_div{
     background-color: rgb(79, 119, 179);
     width:100%;
-    height: 300px;
+    height: 94%;
     display:none;
+    overflow: auto;
+}
+
+
+.item_list{
+    width:350px;
+    height:100%;
+    background: yellowgreen;
+}
+
+.list1_div{
+    width:85%;
+    height:100px;
+    margin: auto;
+    margin-top: 10px;
+    background-color: darkorchid;
+    position: relative;
+}
+
+#item_img{
+    width: 100px;
+    height: 100px;
+    background-color: darksalmon;
+    display:inline-block;
+}
+
+#item_info{
+    width: 170px;
+    height: 100px;
+    display:inline-block;
+    background-color: darkgray;
+    position: absolute;
+    left:100px;
+}
+
+#item_ul{
+    margin-top: 10px;
+    margin-left: 20px;
+    padding: 0;
+    list-style: none;
+    
+}
+
+#item_ul li{
+    margin-top:8px;
 }
