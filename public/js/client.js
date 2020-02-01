@@ -1,3 +1,14 @@
+function tab_click(isShop,tap){
+    
+
+    const send_param={}
+
+    $.post('/tab_click', send_param, function(){
+        
+    });
+};
+
+
 $(document).ready(function(){
     $(document).on('click', '#logout_btn', function(){
         $.post('/logout', {}, function(returnData){

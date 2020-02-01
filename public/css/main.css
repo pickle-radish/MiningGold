@@ -28,12 +28,13 @@ body{
     margin-left: 10px;
     margin-top: 22px;
     display:inline-block;
+    
+    color: white;
 }
 
 
 
 #menu_div{
-    background-color:lightgray;
     width: 400px;
     height:99.9vh;
     margin:0;  

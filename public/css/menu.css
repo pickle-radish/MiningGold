@@ -1,8 +1,7 @@
 #menu_tab{
     width:30px;
     height:100%;
-    background-color: aqua;
-    float:left;
+    float:right;
 }
 
 #login_div{
@@ -59,7 +58,7 @@
 .tab_write{
     width: 90%;    
     writing-mode: tb-rl; 
-    background-color: Darkslateblue;
+    background-color: rgba(139, 122, 23, 0.966);
     color:white;
     padding:10px 0;
     margin:3px 0;
@@ -96,26 +95,24 @@
 }
 
 .shopping_div{
-    background-color: rgb(79, 119, 179);
     width:100%;
     height: 94%;
     display:none;
-    overflow: auto;
 }
 
 
 .item_list{
-    width:350px;
-    height:100%;
-    background: yellowgreen;
+    width:370px;
+    height:101%;
+    background-color:rgba(129, 128, 128, 0.507);
+    overflow: auto;
+    float:right;
 }
 
-.list1_div{
-    width:85%;
+.list_div{
     height:100px;
-    margin: auto;
+    margin-left: 10px;
     margin-top: 10px;
-    background-color: darkorchid;
     position: relative;
 }
 
@@ -127,10 +124,11 @@
 }
 
 #item_info{
-    width: 170px;
+    width: 230px;
     height: 100px;
     display:inline-block;
-    background-color: darkgray;
+    color: white;
+    background-color: rgb(73, 69, 31);
     position: absolute;
     left:100px;
 }
@@ -145,4 +143,10 @@
 
 #item_ul li{
     margin-top:8px;
+}
+
+#buy_div{
+    position:absolute;
+    right: 40px;
+    bottom: 10px;
 }

@@ -1,7 +1,7 @@
 create table user(
 	id varchar(20),
     pw varchar(20),
-    name varchar(20) not null,
+    name varchar(20) not null unique,
     lv int default 1,
     exp int default 0,
     gold int default 0,

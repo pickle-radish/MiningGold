@@ -10,6 +10,8 @@ router.post('/', (req,res)=>{
         }else{
             if(result[0]){
                 req.session.name=result[0].name;
+                req.session.shop_category='weapon';
+                req.session.inventory_category='weapon';
                 res.json({message:"로그인 되었습니다"});
             }else{
                 res.json({message:"ID와 PW를 확인해주세요"});
