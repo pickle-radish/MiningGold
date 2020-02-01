@@ -1,5 +1,8 @@
 $(document).ready(function(){
 
+    $(document).on('click', '#login_btn', function(){
+    });
+
     $(document).on('click', '#main_tab', function(){
         $('#information_div').show();
         $('#market_div').hide();
