@@ -38,6 +38,20 @@
     </div>
  
     <div id="menu_div" class="pull-right" >
+        <%
+            let flag=0;
+            if(flag==0){
+        %>
+        <div id="login_div">
+            <label>ID</label>
+            <input type="text" id="userID"><br> 
+            <label>PW</label>
+            <input type="password" id="userPW"><br>
+            <button id="login_btn" class="btn pull-right">login</button>
+        </div>
+        <%
+            }   else{
+        %>
         <div class="tab">
             <button class="tablinks" id="main_tab">메인</button>
             <button class="tablinks" id="market_tab">상점</button>
@@ -75,7 +89,7 @@
                     </div> 
                 </div>
                 <%       
-                  }
+                }
                 %>
             </div>
         </div>
@@ -104,11 +118,14 @@
                     </div> 
                 </div>
                 <%       
-                  }
+                }
                 %>
             </div>
         </div>
-        
+
+        <%
+             }
+        %>
     </div>
         
     <div id="character_div" class="pull-right" >

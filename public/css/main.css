@@ -14,27 +14,27 @@ body{
 }
 
 #dungeon_div{
-    width: 350px;
+    width: 250px;
     height: 99.4vh;
     display: inline-block;
     background-color: whitesmoke;
     margin-top:0;
     margin-bottom:0;
-    margin-left: 30px;
+    margin-left: 70px;
 }
 
 #monster_div{
-    width: 350px;
-    height: 350px;
+    width: 250px;
+    height: 250px;
     background-color: indianred;
-    margin-top: 50px;
+    margin-top: 150px;
 }
 
 #mining_div{
     width: 100%;
-    height: 350px;
+    height: 250px;
     background-color: darkorange;
-    margin-top: 70px;
+    margin-top: 120px;
     margin-bottom:0;
 }
 
