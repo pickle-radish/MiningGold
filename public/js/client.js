@@ -1,7 +1,24 @@
 $(document).ready(function(){
-
     $(document).on('click', '#login_btn', function(){
-        
+        const id=$("#userID").val();
+        const pw=$("#userPW").val(); 
+        const send_param={id, pw};
+        $.post('/login', send_param, function(returnData){
+            alert(returnData.message);
+        });
+    });
+
+    $(document).on('click', '#register_btn', function(){
+        const id=$("#new_id").val();
+        const pw=$("#new_pw").val();
+        const name=$("#new_name").val();  
+
+        const send_param={id, pw, name};
+        $.post('/register', send_param, function(returnData){
+            alert(returnData.message);
+            $('#registermodal').modal("hide");
+
+        });
     });
 
     $(document).on('click', '#main_tab', function(){
@@ -20,6 +37,5 @@ $(document).ready(function(){
         $('#market_div').hide();
         $('#inventory_div').show();
     });
-
 
 });

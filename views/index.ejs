@@ -40,7 +40,7 @@
     <div id="menu_div" class="pull-right" >
         <%
             let flag=0;
-            if(flag!=0){
+            if(flag==0){
         %>
         <div id="login_div">
             <label>ID</label>
@@ -48,7 +48,7 @@
             <label>PW</label>
             <input type="password" id="userPW"><br>
             <button id="login_btn" class="btn pull-right">로그인</button>
-            <button id="register_btn" class="btn pull-right">회원가입</button>
+            <button id="register_modal_btn" class="btn pull-right" data-target="#registermodal" data-toggle="modal">회원가입</button>
         </div>
         <%
             }   else{
@@ -149,6 +149,29 @@
             <div id="inventory_footer">
                 <div id="inventory_boots_div"></div>
                 <div id="inventory_pet_div" class="pull-right"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="registermodal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">회원가입</h4>
+                </div>
+                <div class="modal-body" style="text-align:center;">
+                    <label>ID</label><br>
+                    <input type="text" id="new_id"><br>
+                    <label>PW</label><br>
+                    <input type="password" id="new_pw"><br>
+                    <label>Nick Name</label><br>
+                    <input type="text" id="new_name"><br>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="register_btn">회원가입</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">닫기</button>
+                </div>
             </div>
         </div>
     </div>
