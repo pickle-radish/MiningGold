@@ -1,11 +1,9 @@
-function tab_click(isShop,tap){
-    
-
-    const send_param={}
-
-    $.post('/tab_click', send_param, function(){
-        
-    });
+function tab_click(isShop,tab){
+    alert();
+    const send_param={category:tab};
+    $.post('/tab', send_param, function(returnData){
+        $('#shop_list').html(returnData);
+    }); 
 };
 
 
@@ -17,12 +15,12 @@ $(document).ready(function(){
         });
     });
 
-    $(document).on('click', '#top_tab', function(){
-        const send_param={category:"top"};
-        $.post('/tab', send_param, function(returnData){
-            $('#weapon_list').html(returnData);
-        }); 
-    });
+    // $(document).on('click', '#top_tab', function(){
+    //     const send_param={category:"top"};
+    //     $.post('/tab', send_param, function(returnData){
+    //         $('#weapon_list').html(returnData);
+    //     }); 
+    // });
 
 
     $(document).on('click', '#login_btn', function(){
