@@ -1,3 +1,4 @@
+const boardRouter=require('./routes/board');
 const toptabRouter=require('./routes/tabClick');
 const logoutRouter=require('./routes/logout');
 const loginRouter=require('./routes/login');
@@ -23,6 +24,7 @@ app.use(session({
     }
 }));
 
+app.use('/board', boardRouter);
 app.use('/tab', toptabRouter);
 app.use('/logout', logoutRouter);
 app.use('/login', loginRouter);
