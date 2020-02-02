@@ -1,3 +1,4 @@
+const toptabRouter=require('./routes/tabClick');
 const logoutRouter=require('./routes/logout');
 const loginRouter=require('./routes/login');
 const registerRouter=require('./routes/register');
@@ -22,6 +23,7 @@ app.use(session({
     }
 }));
 
+app.use('/tab', toptabRouter);
 app.use('/logout', logoutRouter);
 app.use('/login', loginRouter);
 app.use('/register', registerRouter);

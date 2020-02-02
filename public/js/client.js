@@ -17,6 +17,14 @@ $(document).ready(function(){
         });
     });
 
+    $(document).on('click', '#top_tab', function(){
+        const send_param={category:"top"};
+        $.post('/tab', send_param, function(returnData){
+            $('#weapon_list').html(returnData);
+        }); 
+    });
+
+
     $(document).on('click', '#login_btn', function(){
         const id=$("#userID").val();
         const pw=$("#userPW").val(); 
@@ -55,6 +63,12 @@ $(document).ready(function(){
         $('#information_div').hide();
         $('#market_div').hide();
         $('#inventory_div').show();
+    });
+
+    $(document).on('click', '#board_tab', function(){
+        $.post('/board', send_param, function(returnData){
+
+        });
     });
 
 });
