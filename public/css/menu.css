@@ -27,6 +27,7 @@ label {
 
 #userPW, #userID{
     width: 300px;
+    color: black;
 }
 #userPW{
     margin:10px 0;

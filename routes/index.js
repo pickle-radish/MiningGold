@@ -30,7 +30,7 @@ router.get('/', async (req,res)=>{
                         });
                     };
 
-                    const sql_item=`select * from item where category='${req.session.shop_category}'`;
+                    const sql_item=`select * from item where category='weapon'`;
                     let item = ()=> {
                         return new Promise((resolve,reject)=>{
                             con.query(sql_item, (err, result)=>{
@@ -43,7 +43,7 @@ router.get('/', async (req,res)=>{
                         });
                     };
                     
-                    const sql_inventory=`select * from inventory as i join item on i.item_id=item.item_id where user_id='${name}' and category='${req.session.inventory_category}'`;
+                    const sql_inventory=`select * from inventory as i join item on i.item_id=item.item_id where user_id='${name}' and category='weapon'`;
                     let inventory = ()=>{
                         return new Promise((resolve,reject)=>{
                             con.query(sql_inventory, (err, result)=>{
