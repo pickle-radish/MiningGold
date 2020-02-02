@@ -64,11 +64,8 @@ $(document).ready(function(){
         $('#market_div').hide();
         $('#inventory_div').show();
     });
-
+});
     $(document).on('click', '#board_tab', function(){
-        $.post('/board', send_param, function(returnData){
-
-        });
+        $.post('/board',{}, function(returnData){
     });
-
 });
