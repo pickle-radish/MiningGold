@@ -56,13 +56,19 @@
             
             if(!user_result){
         %>
-        <div id="login_div">
-            <label>ID</label>
-            <input type="text" id="userID"><br> 
-            <label>PW</label>
-            <input type="password" id="userPW"><br>
-            <button id="login_btn" class="btn pull-right">로그인</button>
-            <button id="register_modal_btn" class="btn pull-right" data-target="#registermodal" data-toggle="modal">회원가입</button>
+        <div id="login_menu_div">
+            <div id="login_div">
+                <div>
+                    <label>ID</label>
+                    <input type="text" id="userID">
+                </div>
+                <div>
+                    <label>PW</label>
+                    <input type="password" id="userPW">
+                </div>
+                <button id="login_btn" class="btn btn-default pull-right">로그인</button>
+                <button id="register_modal_btn" class="btn btn-default pull-right" data-target="#registermodal" data-toggle="modal">회원가입</button>
+            </div>
         </div>
         <%
             }else{
