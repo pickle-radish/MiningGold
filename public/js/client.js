@@ -64,8 +64,8 @@ $(document).ready(function(){
         $('#market_div').hide();
         $('#inventory_div').show();
     });
-});
+
     $(document).on('click', '#board_tab', function(){
-        $.post('/board',{}, function(returnData){
+       location.href="/board";
     });
 });
