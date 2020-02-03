@@ -67,8 +67,14 @@ $(document).ready(function(){
         $('#market_div').hide();
         $('#inventory_div').show();
     });
+<<<<<<< HEAD
     $(document).on('click', '#board_tab', function(){
         location.href="/board"; 
+=======
+
+    $(document).on('click', '#board_tab', function(){
+       location.href="/board";
+>>>>>>> 83b58964c22fc1001699bf56973b0af09685ddff
     });
 });
    
