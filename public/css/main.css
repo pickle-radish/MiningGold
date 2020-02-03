@@ -43,7 +43,7 @@ body{
     width: 250px;
     height: 99.4vh;
     display: inline-block;
-    background-color: rgb(88, 255, 219);
+    /* background-color: rgb(88, 255, 219); */
     margin-top:0;
     margin-bottom:0;
     margin-left: 70px;
@@ -52,16 +52,27 @@ body{
 #monster_div{
     width: 250px;
     height: 250px;
-    background-color: indianred;
+    /* background-color:rgba(129, 128, 128, 0.226); */
     margin-top: 150px;
 }
 
 #mining_div{
     width: 100%;
     height: 250px;
-    background-color: darkorange;
-    margin-top: 120px;
+    /* background-color:rgba(129, 128, 128, 0.226); */
+    margin-top: 200px;
     margin-bottom:0;
+    position:relative;
+}
+
+#pick_div{
+    position:absolute;
+}
+
+#gold_div{
+    position:absolute;
+    bottom:-20px;
+    margin-left: 30px;
 }
 
 #character_div{
@@ -69,7 +80,8 @@ body{
     height: 99.9vh;
     background-color:mintcream;
     margin-right: 30px;
-    display: inline-block;
+    /* display: inline-block; */
+    display: none;
     position:relative;
     margin-top:0;
     margin-bottom:0;

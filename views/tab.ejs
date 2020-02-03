@@ -1,23 +1,74 @@
-
 <%
-    if(item_result){
-    for(let i=0;i<item_result.length;i++){
+    if(isShop=="true"){
+        for(let i=0;i<item_result.length;i++){
 %>
-<div class="list_div">
-    <div id="item_img">
-        <img src="<%=item_result[i].img+(i+1)%>.gif" width="100%" height="100%" style="object-fit:fill;">
-    </div>
-    <div id="item_info">
-        <ul id="item_ul">
-            <li><%=item_result[i].name%></li>  
-            <li>공격력 : <%=item_result[i].power%></li>  
-            <li><%=item_result[i].price%> gold</li>  
-        </ul>
-    </div>
-    <div id="buy_div">
-        <button class="btn btn-primary" id="buy_btn">구매</button>
-    </div>
-</div>
+            <div class="list_div">
+                <div id="item_img">
+                    <img src="<%=item_result[i].img+(i+1)%>.gif" width="100%" height="100%" style="object-fit:fill;">
+                </div>
+                <div id="item_info">
+                    <ul id="item_ul">
+                        <li><%=item_result[i].name%></li>  
+                        <li>공격력 : <%=item_result[i].power%></li>  
+                        <li><%=item_result[i].price%> gold</li>
+                    </ul>
+                </div>
+                <div id="buy_div">
+                    <%
+                        let buy=0;
+                        for(let j=0; j<inventory_result.length;j++){
+                            
+                            if(item_result[i].item_id == inventory_result[j].item_id){
+                                if(inventory_result[j].buy){
+                                    buy=1;
+                    %>
+                                    <button class="btn btn-basic">보유중</button>
+                    <%
+                                }
+                            }  
+                        }  
+                        if(!buy){
+                    %>
+                        <button class="btn btn-primary" id="<%=item_result[i].item_id%>" onclick="buy(this.id)">구매</button>
+                    <%  
+                        }
+                    %>
+                </div>
+            </div>
 <%       
-}}else console.log(item_result);
+        }
+    }else{
+    
+        for(let i=0;i<inventory_result.length;i++){
+%>
+            <div class="list_div">
+                <div id="item_img">
+                    <img src="<%=inventory_result[i].img+(i+1)%>.gif" width="100%" height="100%" style="object-fit:fill;">
+                </div>
+                <div id="item_info">
+                    <ul id="item_ul">
+                        <li><%=inventory_result[i].name%></li>  
+                        <li>공격력 : <%=inventory_result[i].power%></li>  
+                        <li><%=inventory_result[i].price%> gold</li>  
+                    </ul>
+                </div>
+                <div id="buy_div">
+                    <%
+                        if(inventory_result[i].onoff){
+                    %>
+                    <button class="btn btn-primary" id="on_btn" style="display:none;">장착</button>
+                    <button class="btn btn-danger" id="off_btn">해제</button>
+                    <%
+                        }else{
+                    %>
+                    <button class="btn btn-primary" id="on_btn">장착</button>
+                    <button class="btn btn-danger" id="off_btn" style="display:none;">해제</button>
+                    <%
+                        }
+                    %>
+                </div>
+            </div>
+<%       
+        }
+    }
 %>

@@ -11,7 +11,7 @@ router.get('/', async (req,res)=>{
     if(req.session.name){
         name=req.session.name;
 
-            const sql_user=`select name, lv, exp, stage from user where name='${name}'`;
+            const sql_user=`select * from user where name='${name}'`;
             con.query(sql_user, (err,result)=>{
                 if(err){
                     console.log(err);
@@ -24,13 +24,13 @@ router.get('/', async (req,res)=>{
                                 if(err){
                                     console.log(err);
                                 }else{
-                                    resolve(result);
+                                    resolve(result[0]);
                                 }
                             });
                         });
                     };
 
-                    const sql_item=`select * from item where category='weapon'`;
+                    const sql_item=`SELECT * FROM item where category="weapon";`;
                     let item = ()=> {
                         return new Promise((resolve,reject)=>{
                             con.query(sql_item, (err, result)=>{
@@ -43,7 +43,7 @@ router.get('/', async (req,res)=>{
                         });
                     };
                     
-                    const sql_inventory=`select * from inventory as i join item on i.item_id=item.item_id where user_id='${name}' and category='weapon'`;
+                    const sql_inventory=`select * from inventory as i join item on i.item_id=item.item_id where user_name='${name}' and category='weapon'`;
                     let inventory = ()=>{
                         return new Promise((resolve,reject)=>{
                             con.query(sql_inventory, (err, result)=>{
@@ -58,7 +58,7 @@ router.get('/', async (req,res)=>{
 
                     let response = ()=>{
                         return new Promise((resolve,reject)=>{
-                         res.render('index',{user_result, item_result, monster_result, inventory_result});
+                            res.render('index',{user_result, item_result, monster_result, inventory_result});
                         });
                     }
 

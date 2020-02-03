@@ -1,27 +1,33 @@
 function tab_click(isShop,tab){
-    alert();
-    const send_param={category:tab};
+    const send_param={isShop, category:tab};
     $.post('/tab', send_param, function(returnData){
-        $('#shop_list').html(returnData);
-    }); 
+        if(isShop){
+            $('#shop_list').html(returnData);
+        }else{
+            $('#inven_list').html(returnData);
+        }
+    });
 };
+
+function buy(item_id){
+    console.log(item_id);
+    let button=`<button class="btn btn-basic">보유중</button>`;
+    const send_param={item_id};
+    $.post('/buy', send_param, function(returnData){
+        $('#inven_list').html(returnData);
+        $('#buy_div').html(button);
+    });
+}
 
 
 $(document).ready(function(){
+    
     $(document).on('click', '#logout_btn', function(){
         $.post('/logout', {}, function(returnData){
             alert(returnData.message);
             location.reload();
         });
     });
-
-    // $(document).on('click', '#top_tab', function(){
-    //     const send_param={category:"top"};
-    //     $.post('/tab', send_param, function(returnData){
-    //         $('#weapon_list').html(returnData);
-    //     }); 
-    // });
-
 
     $(document).on('click', '#login_btn', function(){
         const id=$("#userID").val();
@@ -55,15 +61,14 @@ $(document).ready(function(){
         $('#information_div').hide();
         $('#market_div').show();
         $('#inventory_div').hide();
-        
     });
     $(document).on('click', '#inventory_tab', function(){
         $('#information_div').hide();
         $('#market_div').hide();
         $('#inventory_div').show();
     });
-});
     $(document).on('click', '#board_tab', function(){
-        $.post('/board',{}, function(returnData){
+        location.href="/board"; 
     });
 });
+   

@@ -1,5 +1,6 @@
+const buyRouter=require('./routes/buy');
 const boardRouter=require('./routes/board');
-const toptabRouter=require('./routes/tabClick');
+const tabRouter=require('./routes/tabClick');
 const logoutRouter=require('./routes/logout');
 const loginRouter=require('./routes/login');
 const registerRouter=require('./routes/register');
@@ -24,8 +25,9 @@ app.use(session({
     }
 }));
 
+app.use('/buy', buyRouter);
 app.use('/board', boardRouter);
-app.use('/tab', toptabRouter);
+app.use('/tab', tabRouter);
 app.use('/logout', logoutRouter);
 app.use('/login', loginRouter);
 app.use('/register', registerRouter);
