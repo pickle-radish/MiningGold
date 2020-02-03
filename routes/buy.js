@@ -36,7 +36,7 @@ router.post('/', async (req,res)=>{
             });
         });
     }
-    await buy_item();
+    let message = await buy_item();
     let inventory_result = await set_inventory();
     res.render('tab', {inventory_result, isShop:false});
 });

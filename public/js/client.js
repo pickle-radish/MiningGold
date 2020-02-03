@@ -14,8 +14,9 @@ function buy(item_id){
     let button=`<button class="btn btn-basic">보유중</button>`;
     const send_param={item_id};
     $.post('/buy', send_param, function(returnData){
+        $('#'+item_id).html("보유중");
+        $('#'+item_id).attr("class", 'btn btn-basic');
         $('#inven_list').html(returnData);
-        $('#buy_div').html(button);
     });
 }
 
@@ -67,14 +68,9 @@ $(document).ready(function(){
         $('#market_div').hide();
         $('#inventory_div').show();
     });
-<<<<<<< HEAD
-    $(document).on('click', '#board_tab', function(){
-        location.href="/board"; 
-=======
 
     $(document).on('click', '#board_tab', function(){
        location.href="/board";
->>>>>>> 83b58964c22fc1001699bf56973b0af09685ddff
     });
 });
    
