@@ -16,8 +16,9 @@ function set_gold(){
 }
 
 function buy(item_id){
-    console.log(item_id);
-    const send_param={item_id};
+    const price=$('#'+item_id+'_item_price').val();
+    console.log(price);
+    const send_param={item_id, price};
     $.post('/buy/item', send_param, function(returnData){
         $('#'+item_id).html("보유중");
         $('#'+item_id).attr("class", 'btn btn-basic');
@@ -28,6 +29,13 @@ function buy(item_id){
 
 
 $(document).ready(function(){
+
+    $(document).on('click', '#monster_div', function(){
+        
+        $.post('/attack', {}, function(returnData){
+            $('#monster_hp').html(returnData.hp);
+        });
+    });
     
     $(document).on('click', '#mining_div', function(){
         $.post('/mining', {}, function(returnData){

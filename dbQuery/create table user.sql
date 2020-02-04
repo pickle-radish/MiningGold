@@ -6,6 +6,7 @@ create table user(
     exp int default 0,
     gold int default 0,
     stage int default 1,
+    hp int default 30,
     power int default 1,
     primary key(id))
     default character set=utf8; 

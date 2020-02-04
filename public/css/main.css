@@ -55,6 +55,13 @@ body{
     /* background-color:rgba(129, 128, 128, 0.226); */
     margin-top: 150px;
 }
+#hp_bar_div{
+    position:relative;
+}
+
+#hp_bar{
+    position:absolute;
+}
 
 #mining_div{
     width: 100%;

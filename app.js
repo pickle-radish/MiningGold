@@ -1,3 +1,4 @@
+const attackRouter=require('./routes/attack');
 const miningRouter=require('./routes/mining');
 const buyRouter=require('./routes/buy');
 const boardRouter=require('./routes/board');
@@ -26,6 +27,7 @@ app.use(session({
     }
 }));
 
+app.use('/attack', attackRouter);
 app.use('/mining', miningRouter);
 app.use('/buy', buyRouter);
 app.use('/board', boardRouter);

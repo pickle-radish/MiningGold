@@ -38,7 +38,7 @@ router.post('/item', async (req,res)=>{
                 if(err){
                     console.log(err);
                 }else{
-                    const spend_gold=`update user set gold=${gold}-${result[0].price} where name='${name}'`;
+                    const spend_gold=`update user set gold=${req.body.price}-${result[0].price} where name='${name}'`;
                     con.query(spend_gold, (err)=>{
                         if(err){
                             console.log(err);
