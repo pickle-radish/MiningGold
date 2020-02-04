@@ -1,3 +1,4 @@
+const miningRouter=require('./routes/mining');
 const buyRouter=require('./routes/buy');
 const boardRouter=require('./routes/board');
 const tabRouter=require('./routes/tabClick');
@@ -25,6 +26,7 @@ app.use(session({
     }
 }));
 
+app.use('/mining', miningRouter);
 app.use('/buy', buyRouter);
 app.use('/board', boardRouter);
 app.use('/tab', tabRouter);
