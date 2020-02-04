@@ -14,19 +14,44 @@ router.get('/', (req,res)=>{
     });
 });
 router.get('/write_form', (req,res)=>{   
-    const sql_board=`select * from board`;
+    res.render('write',{});
+});
 
-    con.query(sql_board, (err, result)=>{
+router.post('/write', (req,res)=>{   
+    
+    const sql=`insert into board(n_name,title,content)VALUES( '${req.session.name}', '${req.body.title}', '${req.body.content}')`;
+    con.query(sql,(err)=>{
         if(err){
-            console.log(err);
+            console.error(err);
+            res.json({message:"글 등록을 할 수 없습니다"})  
         }else{
-            res.render('board', {result});
+            console.log('board insert okay');
+            res.json({message:"글 등록이 완료되었습니다"});
         }
     });
 });
 
-router.get('/write', (req,res)=>{   
-    res.render('write', {});
+router.get('/content', (req,res)=>{  
+    console.log(req.query.id);
+    con.query(`select * from board where bo_no='${req.query.id}'`, (err, result)=>{
+        if(err) {
+            console.log(err);
+        }else{
+            console.log(result);
+            res.render('content',{result:result[0]});
+        }
+    });
+});
+
+router.post('/delete', (req,res)=>{
+
+    con.query(`DELETE FROM board WHERE bo_no = '${req.body.id}'`, (err)=>{
+        if(err) {
+            console.log(err);
+        }else{
+            res.json({message:"삭제되었습니다"});
+        }
+    });
 });
 
 
