@@ -9,19 +9,32 @@ function tab_click(isShop,tab){
     });
 };
 
+function set_gold(){
+    $.post('/buy/set_gold', {}, function(returnData){
+        $('#my_gold').html(returnData.gold);
+    });
+}
+
 function buy(item_id){
     console.log(item_id);
-    let button=`<button class="btn btn-basic">보유중</button>`;
     const send_param={item_id};
-    $.post('/buy', send_param, function(returnData){
+    $.post('/buy/item', send_param, function(returnData){
         $('#'+item_id).html("보유중");
         $('#'+item_id).attr("class", 'btn btn-basic');
         $('#inven_list').html(returnData);
+        set_gold();
     });
 }
 
 
 $(document).ready(function(){
+    
+    $(document).on('click', '#mining_div', function(){
+        $.post('/mining', {}, function(returnData){
+            $('#my_gold').html(returnData.gold);
+        });
+    });
+
     
     $(document).on('click', '#logout_btn', function(){
         $.post('/logout', {}, function(returnData){
@@ -57,6 +70,7 @@ $(document).ready(function(){
         $('#information_div').show();
         $('#market_div').hide();
         $('#inventory_div').hide();
+
     });
     $(document).on('click', '#market_tab', function(){
         $('#information_div').hide();
