@@ -33,18 +33,27 @@
           <thead>
             <tr>
               <th>제목</th>
-              <th><input type="text" id="board_insert_title"></th>
+              <th> <%=result.title%></th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><div style="margin-top:100px;">내용 작성</div></td>
-              <td><textarea id="board_insert_content" rows="10" cols="50"></textarea></td>
+              <td><div>작성자</div></td>
+              <td><%=result.n_name%> </td>
+            </tr>
+            <tr>
+              <td><div>작성시간</div></td>
+              <td><%=result.create_time%> </td>
+            </tr>
+            <tr>
+              <td><div style="margin-top:100px; margin-bottom:100px;">내용</div></td>
+              <td><%=result.content%> </td>
             </tr>
           </tbody>
         </table>
-        <button type='btn btn-basic' id="board_upload">입력</button>
-        <button type='btn btn-basic' id="board_write_cancel">취소</button>
+        <button type="button" class="btn btn-default" id="btn_back">뒤로가기</button>
+        <button type="button" class="btn btn-default" id="btn_modify">수정</button>
+        <button type="button" class="btn btn-default" id="btn_delete">삭제</button>
       </div>      
 
 </body>
