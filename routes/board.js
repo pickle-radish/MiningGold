@@ -19,7 +19,7 @@ router.get('/write_form', (req,res)=>{
 
 router.post('/write', (req,res)=>{   
     
-    const sql=`insert into board(n_name,title,content)VALUES( '${req.session.name}', '${req.body.title}', '${req.body.content}')`;
+    const sql=`insert into board(n_name,title,content)VALUES( ${con.escape(req.session.name)}, ${con.escape(req.body.title)}, ${con.escape(req.body.content)})`;
     con.query(sql,(err)=>{
         if(err){
             console.error(err);
@@ -33,7 +33,7 @@ router.post('/write', (req,res)=>{
 
 router.get('/content', (req,res)=>{  
     console.log(req.query.id);
-    con.query(`select * from board where bo_no='${req.query.id}'`, (err, result)=>{
+    con.query(`select * from board where bo_no=${con.escape(req.query.id)}`, (err, result)=>{
         if(err) {
             console.log(err);
         }else{
@@ -45,7 +45,7 @@ router.get('/content', (req,res)=>{
 
 router.post('/delete', (req,res)=>{
 
-    con.query(`DELETE FROM board WHERE bo_no = '${req.body.id}'`, (err)=>{
+    con.query(`DELETE FROM board WHERE bo_no = ${req.body.id}`, (err)=>{
         if(err) {
             console.log(err);
         }else{

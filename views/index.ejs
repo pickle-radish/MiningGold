@@ -9,7 +9,6 @@
     <script src="js/client.js"></script>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/menu.css">
-    <link rel="stylesheet" href="css/market.css">
     <style>
         .coverid_video{
             position:absolute;
@@ -53,12 +52,13 @@
     %>
     <div id="dungeon_div">
         <div id="monster_div">
-            <img src="<%=monster_result.img%><%=user_result.stage%>.gif" width="100%" height="100%" style="object-fit:fill;">
+            <img src="<%=monster_result.img%>.gif" width="100%" height="100%" style="object-fit:fill;">
             <div class="progress" id="hp_bar_div" style="margin-top: 20px;">
                 <div class="progress-bar progress-bar-danger" id="hp-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" >
-                    <span id="monster_hp"><%=user_result.hp%></span>/<%=monster_result.hp%>
+                    
                 </div>
-              </div>
+                <div id="hp"><span id="monster_hp"><%=user_result.hp%></span>/<%=monster_result.hp%></div>
+            </div>
         </div>
         <script>
             document.getElementById("hp-bar").style.width = '<%=hp%>%'; 
@@ -129,13 +129,13 @@
                 %>
                 <div class="list_div">
                     <div id="item_img">
-                       <img src="<%=item_result[i].img+(i+1)%>.gif" width="100%" height="100%" style="object-fit:fill;">
+                       <img src="<%=item_result[i].img%>.gif" width="100%" height="100%" style="object-fit:fill;">
                     </div>
                     <div id="item_info">
                         <ul id="item_ul">
                             <li><%=item_result[i].name%></li>  
                             <li>공격력 : <%=item_result[i].power%></li>  
-                            <li id="<%=item_result[i].item_id%>_item_price"><%=item_result[i].price%> gold</li>
+                            <li><span id="<%=item_result[i].item_id%>_item_price"><%=item_result[i].price%></span> gold</li>
                         </ul>
                     </div>
                     <div id="buy_div">
@@ -184,7 +184,7 @@
                 %>
                 <div class="list_div">
                     <div id="item_img">
-                       <img src="<%=inventory_result[i].img+(i+1)%>.gif" width="100%" height="100%" style="object-fit:fill;">
+                       <img src="<%=inventory_result[i].img%>.gif" width="100%" height="100%" style="object-fit:fill;">
                     </div>
                     <div id="item_info">
                         <ul id="item_ul">

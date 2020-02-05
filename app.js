@@ -37,6 +37,6 @@ app.use('/login', loginRouter);
 app.use('/register', registerRouter);
 app.use('/',indexRouter);
 
-app.listen(3000,()=>{
+app.listen(3001,()=>{
     console.log("server ready...");
 });

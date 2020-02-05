@@ -3,9 +3,11 @@ const express=require('express');
 const router=express.Router();
 
 router.post('/', (req,res)=>{
-    const sql=`select * from user where id='${req.body.id}' and pw='${req.body.pw}'`;
+    const sql=`select * from user where id=${con.escape(req.body.id)} and pw=${con.escape(req.body.pw)}`;
     con.query(sql, (err, result)=>{
         if(err){
+            console.log(err);
+            console.log(sql);
             res.json({message:"로그인 실패"});
         }else{
             if(result[0]){

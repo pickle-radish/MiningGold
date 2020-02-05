@@ -59,8 +59,13 @@ body{
     position:relative;
 }
 
-#hp_bar{
+#hp-bar{
     position:absolute;
+}
+
+#hp{
+    position:absolute;
+    left: 45%;
 }
 
 #mining_div{

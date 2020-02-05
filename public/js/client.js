@@ -9,22 +9,25 @@ function tab_click(isShop,tab){
     });
 };
 
-function set_gold(){
-    $.post('/buy/set_gold', {}, function(returnData){
-        $('#my_gold').html(returnData.gold);
-    });
-}
 
 function buy(item_id){
-    const price=$('#'+item_id+'_item_price').val();
-    console.log(price);
-    const send_param={item_id, price};
-    $.post('/buy/item', send_param, function(returnData){
-        $('#'+item_id).html("보유중");
-        $('#'+item_id).attr("class", 'btn btn-basic');
-        $('#inven_list').html(returnData);
-        set_gold();
-    });
+    if($(`#${item_id}`).text()!="보유중"){
+        const price=$(`#${item_id}_item_price`).text();
+        const my_gold=$('#my_gold').html();
+        const gold=my_gold-price;
+        if(gold>0){
+            const send_param={item_id, gold};
+            $.post('/buy/item', send_param, function(returnData){
+                $(`#${item_id}`).html("보유중");
+                $(`#${item_id}`).attr("class", 'btn btn-basic');
+                $('#my_gold').html(gold);
+                $('#inven_list').html(returnData);
+            });
+        }else{
+            alert("골드가 부족합니다");
+        }
+    }
+    
 }
 
 
@@ -33,7 +36,11 @@ $(document).ready(function(){
     $(document).on('click', '#monster_div', function(){
         
         $.post('/attack', {}, function(returnData){
-            $('#monster_hp').html(returnData.hp);
+            let hp = returnData.hp_result;
+            $('#monster_hp').html(hp);
+            hp = (hp/30)*100;
+            console.log(hp);
+            $('#hp-bar').css("width", `${hp}%`);
         });
     });
     
